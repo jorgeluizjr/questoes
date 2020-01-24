@@ -3,10 +3,6 @@ node_modules/
 npm-debug.log
 yarn-error.log
 
-# Laravel 4 specific
-bootstrap/compiled.php
-app/storage/
-
 # Laravel 5 & Lumen specific
 public/storage
 public/hot
@@ -15,9 +11,42 @@ public/hot
 public_html/storage
 public_html/hot
 
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Docker
+docker-compose.yml
+database/docker-data
+
 storage/*.key
 .env
 Homestead.yaml
 Homestead.json
-/.vagrant
 .phpunit.result.cache
+.DS_Store
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn.lock
+yarn-error.log*
+/test/unit/coverage/
+/test/e2e/reports/
+selenium-debug.log
+node_modules
+release
+/dist
+package-lock.json
+webapp/package-lock.json
+composer.lock
+api/composer.lock

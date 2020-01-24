@@ -1,0 +1,77 @@
+version: '3.5'
+services:
+  database-service:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    container_name: questoes-database
+    environment:
+      - MYSQL_PASSWORD=senhaquestoes
+      - MYSQL_USER=questoes
+      - MYSQL_DATABASE=questoes
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - "3307:3306"
+    expose:
+      - "3306"
+    volumes:
+      - ./database/docker-data/mysql:/var/lib/mysql
+      - ./database:/docker-entrypoint-initdb.d
+    networks:
+      - questoes_network
+  #  webapp-service:
+  #    #    build: ./webapp
+  #    image: node:10
+  #    container_name: questoes-web
+  #    user: "node"
+  #    working_dir: /home/node/app
+  #    volumes:
+  #    - ./webapp:/home/node/app
+  #    command:
+  #      sh -c 'npm i && npm run serve'
+  #    ports:
+  #    - "8080:8080"
+  #    environment:
+  #    - NODE_ENV=development
+  #    networks:
+  #    - questoes_network
+  api-service:
+    container_name: questoes-api
+    build: ./api
+    image: mds/sli-php-fpm:1.2.1
+    working_dir: /application
+    volumes:
+      - ./api:/application
+    environment:
+      - APP_ENV=local
+    depends_on:
+      - database-service
+    links:
+      - database-service
+    restart: on-failure
+    networks:
+      - questoes_network
+
+  webserver-service:
+    build:
+      context: ./api
+      dockerfile: WebserverDockerfile
+      args:
+        EXPOSE_PORT: 80
+    image: mds/sli-webserver-nginx:1.0.0
+    container_name: questoes-webserver
+    working_dir: /application
+    volumes:
+      - ./api:/application
+      - ./api/docker/webserver/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "89:80"
+    depends_on:
+      - api-service
+    networks:
+      - questoes_network
+
+networks:
+  questoes_network:
+    name: questoes_network
+    driver: bridge
