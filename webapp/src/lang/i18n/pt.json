@@ -1,0 +1,11 @@
+{
+  "projeto": {
+    "identificacao": {
+      "ajuda": {
+        "titulo": "Crie um título sucinto, objetivo e de fácil assimilação, coerente com o objeto a que o projeto se propõe. Deve ser evitado: data, ano, nome de atleta, cidade.",
+        "objeto": "Objeto é uma definição daquilo que o seu projeto pretende realizar. O campo deve ser conciso e apresentar de forma clara o objetivo da proposta. Seja claro, direto e evite adjetivos.<br> Atenção: não confunda objeto com objetivos. Os objetivos serão descritos posteriormente. Deve ser evitado: data, ano, nome de atleta, cidade.",
+        "periodo": "Selecione a duração em meses do projeto. O período de execução é o prazo que a entidade proponente necessita para, após a captação dos recursos, realizar as atividades de preparação, implementação e execução do projeto. Duração máxima: 24 meses."
+      }
+    }
+  }
+}
