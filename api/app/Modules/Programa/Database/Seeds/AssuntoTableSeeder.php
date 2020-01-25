@@ -20,7 +20,7 @@ class AssuntoTableSeeder extends Seeder
             $assuntosFilhos = array_pop($arrAssunto);
             $assuntoPai = Assunto::firstOrCreate($arrAssunto);
             foreach ($assuntosFilhos as $assuntoFilho) {
-                $assuntoPai->assuntosFilhos()->attach(Assunto::firstOrCreate($assuntoFilho)->id_assunto);
+                $assuntoPai->filhos()->attach(Assunto::firstOrCreate($assuntoFilho)->id_assunto);
             }
         }
     }
