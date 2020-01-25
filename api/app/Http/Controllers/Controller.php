@@ -12,6 +12,13 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    private $service;
+
+    public function __construct($service)
+    {
+        $this->service = $service;
+    }
+
     public function sendResponse($data = [], $message = '', $status = Response::HTTP_OK)
     {
         $responseDefault = [
@@ -19,5 +26,10 @@ class Controller extends BaseController
             'data' => $data,
         ];
         return response()->json($responseDefault, $status);
+    }
+
+    public function getService()
+    {
+        return $this->service;
     }
 }

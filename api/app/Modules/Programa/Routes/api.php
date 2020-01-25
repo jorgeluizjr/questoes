@@ -12,7 +12,14 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
-Route::get('/programa', function (Request $request) {
-     return dd($request);
+Route::group([
+    'prefix' => 'programa'
+], function ($router) {
+    Route::apiResource('banca', 'BancaController')
+        ->only(['index']);
+    Route::apiResource('orgao', 'OrgaoController')
+        ->only(['index']);
+    Route::apiResource('assunto', 'AssuntoController')
+        ->only(['index']);
 });
+

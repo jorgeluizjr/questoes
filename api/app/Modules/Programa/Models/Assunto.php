@@ -14,12 +14,27 @@ class Assunto extends AModel
 
     public $timestamps = false;
 
+    public $hidden = [
+        'pivot'
+    ];
+
     protected $fillable = [
         'no_assunto',
     ];
 
+    public function pai()
+    {
+        return $this->hasOneThrough(
+            Assunto::class,
+            ArvoreAssunto::class,
+            'id_assunto_filho',
+            'id_assunto',
+            'id_assunto',
+            'id_arvore_assunto'
+        );
+    }
 
-    public function assuntosFilhos()
+    public function filhos()
     {
         return $this->belongsToMany(
             Assunto::class,
@@ -42,8 +57,8 @@ class Assunto extends AModel
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeAssuntosPai($query)
+    public function scopeAssuntosRaiz($query)
     {
-        return $query->has('assuntosFilhos');
+        return $query->doesntHave('pai');
     }
 }

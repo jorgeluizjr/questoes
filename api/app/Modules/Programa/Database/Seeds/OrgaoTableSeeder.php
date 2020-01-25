@@ -41,10 +41,6 @@ class OrgaoTableSeeder extends Seeder
                 'no_orgao' => 'Senado Federal',
                 'sg_orgao' => 'SF'
             ],
-            [
-                'no_orgao' => 'Instituto Nacional do Seguro Social',
-                'sg_orgao' => 'INSS'
-            ],
         ];
     }
 }
