@@ -1,7 +1,7 @@
 {
-    "name": "laravel/laravel",
+    "name": "questoes",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Questões para concurso.",
     "keywords": [
         "framework",
         "laravel"
