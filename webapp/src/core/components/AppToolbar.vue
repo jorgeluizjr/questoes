@@ -89,7 +89,7 @@ export default {
           href: '',
           title: 'Tema',
           click: this.abrirConfiguracoesDoTema,
-        }
+        },
       ],
     };
   },
