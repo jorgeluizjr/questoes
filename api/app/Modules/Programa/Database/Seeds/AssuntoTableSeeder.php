@@ -31,8 +31,6 @@ class AssuntoTableSeeder extends Seeder
             [
                 'no_assunto' => 'Português',
                 'filhos' => [
-                    ['no_assunto' => 'Fonologia'],
-                    ['no_assunto' => 'Ortografia'],
                     ['no_assunto' => 'Morfologia'],
                     ['no_assunto' => 'Morfologia - Verbos'],
                     ['no_assunto' => 'Morfologia - Pronomes'],
@@ -41,8 +39,6 @@ class AssuntoTableSeeder extends Seeder
             [
                 'no_assunto' => 'Raciocínio Lógico - RLM',
                 'filhos' => [
-                    ['no_assunto' => 'Fundamentos de Lógica'],
-                    ['no_assunto' => 'Tabelas-Verdade'],
                     ['no_assunto' => 'Proposições Simples e Compostas'],
                     ['no_assunto' => 'Análise Combinatória'],
                     ['no_assunto' => 'Probabilidade'],
@@ -51,10 +47,8 @@ class AssuntoTableSeeder extends Seeder
             [
                 'no_assunto' => 'Noções de Informática',
                 'filhos' => [
-                    ['no_assunto' => 'Hardware'],
                     ['no_assunto' => 'Sistema Operacional'],
                     ['no_assunto' => 'Pacote de Aplicativos'],
-                    ['no_assunto' => 'Correio Eletrônico'],
                     ['no_assunto' => 'Softwares'],
                 ],
             ],
@@ -63,8 +57,6 @@ class AssuntoTableSeeder extends Seeder
                 'filhos' => [
                     ['no_assunto' => 'Assinatura Digital'],
                     ['no_assunto' => 'Ataques e ameaças'],
-                    ['no_assunto' => 'Auditoria de Sistemas'],
-                    ['no_assunto' => 'Autenticação'],
                     ['no_assunto' => 'Backup'],
                 ],
             ],

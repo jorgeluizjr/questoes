@@ -34,32 +34,6 @@ class QuestaoTableSeeder extends Seeder
     {
         return [
             [
-                'no_questao' => 'Os termos “série” e “história” acentuam-se em conformidade com a mesma regra ortográfica.',
-                'sg_orgao' => 'PF',
-                'no_banca' => 'CESPE',
-                'no_assunto' => 'Fonologia',
-
-            ],
-            [
-                'no_questao' => 'As palavras “indivíduos”, “vulneráveis”, “incidência” e “neurônios”, contidas no texto, apresentam acento gráfico com base na mesma regra.',
-                'sg_orgao' => 'PF',
-                'no_banca' => 'CESPE',
-                'no_assunto' => 'Fonologia',
-            ],
-            [
-                'no_questao' => 'Os termos “série” e “história” acentuam-se em conformidade com a mesma regra ortográfica.',
-                'sg_orgao' => 'PF',
-                'no_banca' => 'CESPE',
-                'no_assunto' => 'Ortografia',
-
-            ],
-            [
-                'no_questao' => 'Uma opção de grafia igualmente correta para substituir a palavra “afora” (L.2) é a expressão a fora.',
-                'sg_orgao' => 'PF',
-                'no_banca' => 'CESPE',
-                'no_assunto' => 'Ortografia',
-            ],
-            [
                 'no_questao' => 'A inserção de uma vírgula imediatamente após a palavra “Assim” (l.2) alteraria os sentidos do texto.',
                 'sg_orgao' => 'PF',
                 'no_banca' => 'CESPE',

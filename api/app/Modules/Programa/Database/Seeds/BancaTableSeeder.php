@@ -26,10 +26,7 @@ class BancaTableSeeder extends Seeder
         return [
             ['no_banca' => 'CESPE'],
             ['no_banca' => 'IADES'],
-            ['no_banca' => 'FGV'],
             ['no_banca' => 'ESAF'],
-            ['no_banca' => 'QUADRIX'],
-            ['no_banca' => 'FCC'],
         ];
     }
 }
