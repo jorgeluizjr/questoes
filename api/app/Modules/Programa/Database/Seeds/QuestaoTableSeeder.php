@@ -324,7 +324,7 @@ class QuestaoTableSeeder extends Seeder
 
             [
                 'no_questao' => 'A inserção de uma vírgula imediatamente após a palavra “Assim” (l.2) alteraria os sentidos do texto.',
-                'sg_orgao' => '',
+                'sg_orgao' => 'TCU',
                 'no_banca' => 'IADES',
                 'no_assunto' => 'Morfologia',
 
