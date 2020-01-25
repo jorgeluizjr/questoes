@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    export default {
-        name: "Teste.vue"
-    }
+export default {
+  name: 'TesteVue',
+};
 </script>

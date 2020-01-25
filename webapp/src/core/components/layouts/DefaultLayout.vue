@@ -7,8 +7,6 @@
       class="app--toolbar"
     />
     <v-content>
-      <page-header />
-
       <!-- content -->
       <div class="page-wrapper">
         <router-view />
@@ -41,18 +39,11 @@ export default {
     AppFab,
   },
   mounted() {
-    // this.setUsuarioLogadoAction();
   },
   created() {
-    // this.setUsuarioLogadoAction();
-    // this.setPerfilAtivoAction();
-    // this.setMenuAction();
   },
   methods: {
     ...mapActions({
-      // setUsuarioLogadoAction: 'app/setUsuarioLogado',
-      // setPerfilAtivoAction: 'app/setPerfilAtivo',
-      // setMenuAction: 'app/setMenu',
     }),
   },
 };

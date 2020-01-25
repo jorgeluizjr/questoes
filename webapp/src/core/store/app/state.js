@@ -27,7 +27,4 @@ export default {
     menus: [],
   },
   themeDrawer: false,
-  usuarioLogado: {},
-  perfilAtivo: {},
-  menus: [],
 };
