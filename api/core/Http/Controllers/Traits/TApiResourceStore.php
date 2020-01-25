@@ -11,7 +11,7 @@ trait TApiResourceStore
     {
         return $this->sendResponse(
             $this->service->cadastrar($request->all()),
-            __('responses.success.create'),
+            __('responses.success.store'),
             Response::HTTP_CREATED
         );
     }

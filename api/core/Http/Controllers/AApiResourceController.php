@@ -23,4 +23,9 @@ abstract class AApiResourceController extends Controller implements IApiResource
     {
         $this->service = $service;
     }
+
+    public function getService()
+    {
+        return $this->service;
+    }
 }

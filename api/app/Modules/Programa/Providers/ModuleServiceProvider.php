@@ -13,10 +13,7 @@ class ModuleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(module_path('programa', 'Resources/Lang', 'app'), 'programa');
-        $this->loadViewsFrom(module_path('programa', 'Resources/Views', 'app'), 'programa');
         $this->loadMigrationsFrom(module_path('programa', 'Database/Migrations', 'app'), 'programa');
-        $this->loadFactoriesFrom(module_path('programa', 'Database/Factories', 'app'));
     }
 
     /**
