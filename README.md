@@ -48,6 +48,9 @@ O comando abaixo servirá para a criação das imagens utilizadas nos serviços 
 WebServer(NGINX) e WebApp(NodeJS).
 
 ```console
+cp exemplo-docker-compose.yml docker-compose.yml
+```
+```console
 docker-compose up
 ```
 
