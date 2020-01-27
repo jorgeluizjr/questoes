@@ -44,13 +44,17 @@ class Assunto extends AModel
         );
     }
 
-    public function questoes()
+    public function questoes($arrParam = [])
     {
-        return $this->hasMany(
+        $questoes = $this->hasMany(
             Questao::class,
             'id_assunto',
             'id_assunto'
         );
+        if ($arrParam) {
+            $questoes->where($arrParam);
+        }
+        return $questoes;
     }
 
     /**

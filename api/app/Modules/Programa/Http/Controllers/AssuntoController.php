@@ -2,7 +2,6 @@
 
 namespace App\Modules\Programa\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Modules\Programa\Http\Resources\AssuntoResource;
 use App\Modules\Programa\Services\AssuntoService;
 use Core\Http\Controllers\AApiResourceController;
