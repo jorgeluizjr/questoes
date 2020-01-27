@@ -1,11 +1,5 @@
 import * as service from '../../shared/service/base';
 
-export const buscarAgente = nuCpfCnpj => service.getRequest(`/agente/${nuCpfCnpj}`);
-
-export const cadastrarDocumentos = (coProjeto, paramns) => service.postRequest(`/termo-compromisso/projeto/${coProjeto}/arquivo`, paramns);
-
-export const buscarDocumentos = coProjeto => service.getRequest(`/termo-compromisso/projeto/${coProjeto}/arquivo`);
-
-export const excluirDocumentos = (coProjeto, coArquivo) => service.deleteRequest(`/termo-compromisso/projeto/${coProjeto}/arquivo`, coArquivo);
-
-export const enviarDocumentacao = paramns => service.postRequest('/termo-compromisso', paramns);
+export const buscarBancas = () => service.getRequest('/programa/banca');
+export const buscarOrgaos = () => service.getRequest('/programa/orgao');
+export const buscarAssuntos = (idBanca, idOrgao) => service.getRequest(`programa/assunto?id_banca=${idBanca}&id_orgao=${idOrgao}`);
