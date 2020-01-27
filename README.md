@@ -1,15 +1,11 @@
 # Sistemas de Questões de Concurso
 
-## Sobre
-
+# Questões
+Sistemas de questões de concursos
 
 ## Tecnologias
 
 Repositório com responsabilidade de disponibilizar uma stack com serviços que permitam trabalhar com o projeto.
-
-# Questões
-Sistemas de questões de concursos
-
 
 ## Tecnologias utilizadas
 

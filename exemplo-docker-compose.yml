@@ -23,7 +23,7 @@ services:
   api-service:
     container_name: questoes-api
     build: ./api
-    image: mds/sli-php-fpm:1.2.1
+    image: questoes-api:1.0.0
     working_dir: /application
     volumes:
       - ./api:/application
@@ -43,7 +43,7 @@ services:
       dockerfile: WebserverDockerfile
       args:
         EXPOSE_PORT: 80
-    image: mds/sli-webserver-nginx:1.0.0
+    image: questoes-webserver-nginx:1.0.0
     container_name: questoes-webserver
     working_dir: /application
     volumes:
