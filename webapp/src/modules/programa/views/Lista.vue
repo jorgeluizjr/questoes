@@ -11,62 +11,31 @@
               v-for="(item,i) in programas"
               :key="i"
             >
-              <v-expansion-panel-header>{{ item.no_programa }}</v-expansion-panel-header>
+              <v-expansion-panel-header>
+                {{ item.banca.no_banca }} - {{ item.orgao.no_orgao }}
+              </v-expansion-panel-header>
               <v-expansion-panel-content>
-                <v-row
-                  row
-                  wrap
-                >
-                  <v-col
-                    xs4
-                    md="4"
-                    cols="12"
+                <template>
+                  <v-treeview
+                    :items="item.assuntos"
+                    item-text="no_assunto"
+                    item-children="filhos"
+                    open-on-click
                   >
-                    <v-text-field
-                      :value="item.banca.no_banca"
-                      disabled
-                      name="banca"
-                      label="Banca"
-                      type="text"
-                    />
-                  </v-col>
-                  <v-col
-                    xs4
-                    md="4"
-                    cols="12"
-                  >
-                    <v-text-field
-                      :value="item.orgao.no_orgao"
-                      disabled
-                      name="orgao"
-                      label="Orgao"
-                      type="text"
-                    />
-                  </v-col>
-                </v-row>
-                <v-row>
-                  <template>
-                    <v-treeview
-                      :items="item.assuntos"
-                      item-text="no_assunto"
-                      item-children="filhos"
-                      open-on-click
-                    >
-                      <template v-slot:label="{item}">
-                        {{ item.no_assunto }}
-                        <v-chip
-                          v-if="item.quantidade_questoes > 0"
-                          class="ma-2"
-                          color="green"
-                          text-color="white"
-                          filter
-                        >
-                          {{ item.quantidade_questoes }}
-                        </v-chip>
-                      </template>
-                    </v-treeview>
-                  </template>
-                </v-row>
+                    <template v-slot:label="{item}">
+                      {{ item.no_assunto }}
+                      <v-chip
+                        v-if="item.quantidade_questoes > 0"
+                        class="ma-2"
+                        color="green"
+                        text-color="white"
+                        filter
+                      >
+                        {{ item.quantidade_questoes }}
+                      </v-chip>
+                    </template>
+                  </v-treeview>
+                </template>
               </v-expansion-panel-content>
             </v-expansion-panel>
           </v-expansion-panels>
@@ -121,22 +90,22 @@
               row
               wrap
             >
+<!--              <v-col-->
+<!--                xs4-->
+<!--                md="4"-->
+<!--                cols="12"-->
+<!--              >-->
+<!--                <v-text-field-->
+<!--                  v-model="programa.no_programa"-->
+<!--                  name="nome"-->
+<!--                  label="Nome"-->
+<!--                  type="text"-->
+<!--                  :rules="[rules.required]"-->
+<!--                />-->
+<!--              </v-col>-->
               <v-col
                 xs4
-                md="4"
-                cols="12"
-              >
-                <v-text-field
-                  v-model="programa.no_programa"
-                  name="nome"
-                  label="Nome"
-                  type="text"
-                  :rules="[rules.required]"
-                />
-              </v-col>
-              <v-col
-                xs4
-                md="4"
+                md="6"
                 cols="12"
               >
                 <v-select
@@ -150,7 +119,7 @@
               </v-col>
               <v-col
                 xs4
-                md="4"
+                md="6"
                 cols="12"
               >
                 <v-select
