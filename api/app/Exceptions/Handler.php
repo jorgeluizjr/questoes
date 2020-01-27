@@ -49,8 +49,6 @@ class Handler extends ExceptionHandler
     {
         if ($exception instanceof ValidacaoCustomizadaException) {
             return $exception->render($request);
-        } elseif ($exception instanceof AuthenticationException) {
-            $exception = new AuthenticationException(__('auth.unauthenticated'));
         }
         return parent::render($request, $exception);
     }

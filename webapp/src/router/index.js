@@ -22,8 +22,6 @@ const emitirMensagemErro = (mensagem) => {
   });
 };
 
-const isEmpty = string => (!string || string.length === 0);
-
 router.afterEach(() => {
   NProgress.done();
 });

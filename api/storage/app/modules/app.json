@@ -8,15 +8,5 @@
         "id": 49288205,
         "enabled": true,
         "order": 9001
-    },
-    "Projeto": {
-        "basename": "Projeto",
-        "name": "Projeto",
-        "slug": "projeto",
-        "version": "1.0",
-        "description": "This is the description for the Projeto module.",
-        "id": 2689965460,
-        "enabled": true,
-        "order": 9001
     }
 }

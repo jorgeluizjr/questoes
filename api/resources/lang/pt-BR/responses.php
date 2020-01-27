@@ -1,9 +1,9 @@
 <?php
 return [
     'success' => [
-        'list'    => 'Registro(s) retornado(s) com sucesso.',
-        'item'    => 'Registro retornado com sucesso.',
-        'create'  => 'Cadastro realizado com sucesso.',
+        'index'    => 'Registro(s) retornado(s) com sucesso.',
+        'show'    => 'Registro retornado com sucesso.',
+        'store'  => 'Cadastro realizado com sucesso.',
         'update'  => 'Alteração realizada com sucesso',
         'destroy' => 'Exclusão realizada com sucesso',
         'send' => 'Enviado(s) com sucesso.',

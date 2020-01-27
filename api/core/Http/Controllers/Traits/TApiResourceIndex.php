@@ -10,7 +10,7 @@ trait TApiResourceIndex
     {
         return $this->sendResponse(
             $this->service->obterTodos(),
-            __('responses.success.list'),
+            __('responses.success.index'),
             Response::HTTP_OK
         );
     }

@@ -43,10 +43,6 @@ export default {
       text: message,
     });
   },
-  setUsuarioLogado({ commit }) {
-    const userToken = localStorage.getItem('user_token');
-    commit(types.SET_USUARIO_LOGADO, obterInformacoesJWT(userToken).user);
-  },
   setPrimaryDrawer({ commit }, data) {
     commit(types.SET_PRIMARY_DRAWER, data);
   },
@@ -58,13 +54,6 @@ export default {
   },
   setSecondaryDrawerStatus({ commit }, status) {
     commit(types.SET_SECONDARY_DRAWER_STATUS, status);
-  },
-  setMenuAppStatus({ commit, state, dispatch }, status) {
-    if (status && !state.secondaryDrawer.model) {
-      dispatch('setPrimaryDrawerStatus', status);
-    }
-
-    commit(types.SET_MENU_APP_STATUS, status);
   },
   syncTemaLocalStorage({ commit }) {
     const tema = localStorage.getItem('app_tema');
@@ -84,26 +73,4 @@ export default {
   toggleDrawerTheme({ commit }, status) {
     commit(types.SET_THEME_DRAWER, status);
   },
-  setPerfilAtivo({ commit }, perfil) {
-    let perfilAtivo = perfil;
-    if (typeof perfil === 'undefined') {
-      perfilAtivo = JSON.parse(localStorage.getItem('perfil_ativo'));
-    } else {
-      const userToken = localStorage.getItem('user_token');
-      usuarioService.atualizarPerfilAtual(obterInformacoesJWT(userToken).user.co_usuario, perfil.co_perfil, { st_perfil_atual: true });
-      localStorage.setItem('perfil_ativo', JSON.stringify(perfilAtivo));
-    }
-
-    commit(types.SET_PERFIL_ATIVO, perfilAtivo);
-  },
-  // setMenu({ state, commit }, menu) {
-  //   if (Array.isArray(menu)) {
-  //     commit(types.UPDATE_MENU, menu);
-  //   }
-  //   perfilFuncionalidadeService
-  //     .buscarPerfilMenu(state.perfilAtivo.co_perfil)
-  //     .then(({ data }) => {
-  //       commit(types.SET_MENU, data.data);
-  //     });
-  // },
 };

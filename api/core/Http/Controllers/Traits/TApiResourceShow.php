@@ -11,7 +11,7 @@ trait TApiResourceShow
     {
         return $this->sendResponse(
             $model->toArray(),
-            __('responses.success.item'),
+            __('responses.success.show'),
             Response::HTTP_OK
         );
     }

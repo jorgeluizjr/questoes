@@ -20,7 +20,6 @@
       </v-btn>
 
       <v-menu
-        v-model="menuUsuario"
         offset-y
         origin="center center"
         :nudge-bottom="10"
@@ -84,68 +83,36 @@ export default {
   data() {
     return {
       appTitle: process.env.VUE_APP_TITLE,
-      perfilAtivo: {},
-      menuUsuario: false,
       items: [
         {
           icon: 'settings',
           href: '',
           title: 'Tema',
           click: this.abrirConfiguracoesDoTema,
-        }
+        },
       ],
     };
   },
 
   computed: {
     ...mapGetters({
-      usuarioLogadoGetter: 'app/usuarioLogado',
-      perfisGetter: 'app/perfis',
-      perfilAtivoGetter: 'app/perfilAtivo',
-      menuAppStatusGetter: 'app/menuAppStatus',
       secondaryDrawerGetter: 'app/secondaryDrawer',
     }),
     toolbarColor() {
       return this.$vuetify.options.extra.mainNav;
     },
   },
-
-  mounted() {
-    this.perfilAtivo = this.perfilAtivoGetter;
-  },
-
   methods: {
     ...mapActions({
-      setMenuAction: 'app/setMenu',
-      setPerfilAtivoAction: 'app/setPerfilAtivo',
-      setMenuAppStatusAction: 'app/setMenuAppStatus',
       toggleDrawerThemeAction: 'app/toggleDrawerTheme',
       setPrimaryDrawerStatus: 'app/setPrimaryDrawerStatus',
     }),
     handleFullScreen() {
       Util.toggleFullScreen();
     },
-    handleChangePassword() {
-      this.$router.push({ name: 'usuario.alterar.senha' });
-    },
-    handleLogut() {
-      this.$router.push({ name: 'conta-sair' });
-    },
-    handlePerfil(perfil) {
-      this.setPerfilAtivoAction(perfil);
-      this.setMenuAction();
-      this.$router.push('/');
-    },
     abrirConfiguracoesDoTema() {
       this.menuUsuario = false;
       this.toggleDrawerThemeAction(true);
-    },
-    toggleMenu() {
-      this.setMenuAppStatusAction(!this.menuAppStatusGetter);
-
-      if (this.menuAppStatusGetter && !this.secondaryDrawerGetter.model) {
-        this.setPrimaryDrawerStatus(this.menuAppStatusGetter);
-      }
     },
   },
 };
