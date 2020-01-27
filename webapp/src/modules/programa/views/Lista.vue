@@ -53,7 +53,7 @@
                       open-on-click
                     >
                       <template v-slot:label="{item}">
-                        {{item.no_assunto}}
+                        {{ item.no_assunto }}
                         <v-chip
                           v-if="item.quantidade_questoes > 0"
                           class="ma-2"
@@ -61,8 +61,8 @@
                           text-color="white"
                           filter
                         >
-                        {{item.quantidade_questoes}}
-                      </v-chip>
+                          {{ item.quantidade_questoes }}
+                        </v-chip>
                       </template>
                     </v-treeview>
                   </template>
@@ -192,7 +192,7 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'Lista',
-  components: { },
+  components: {},
   data() {
     return {
       dialogPrograma: false,
