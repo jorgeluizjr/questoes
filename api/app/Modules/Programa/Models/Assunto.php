@@ -30,7 +30,7 @@ class Assunto extends AModel
             'id_assunto_filho',
             'id_assunto',
             'id_assunto',
-            'id_arvore_assunto'
+            'id_assunto_pai'
         );
     }
 
