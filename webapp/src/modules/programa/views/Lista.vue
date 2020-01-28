@@ -18,20 +18,21 @@
                 <template>
                   <v-treeview
                     :items="item.assuntos"
+                    item-key="id_assunto"
                     item-text="no_assunto"
                     item-children="filhos"
                     open-on-click
+                    activatable
+                    rounded
+                    selected-color="success"
                   >
                     <template v-slot:label="{item}">
-                      {{ item.no_assunto }}
+                      <span class="font-weight-bold">{{ item.no_assunto }}</span>
                       <v-chip
-                        v-if="item.quantidade_questoes > 0"
                         class="ma-2"
-                        color="green"
-                        text-color="white"
-                        filter
+                        label
                       >
-                        {{ item.quantidade_questoes }}
+                        {{ item.quantidade_questoes }} questões
                       </v-chip>
                     </template>
                   </v-treeview>

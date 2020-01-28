@@ -20,9 +20,9 @@ class AssuntoResource extends JsonResource
             'no_assunto' => $this->no_assunto,
             'pai' => $this->pai,
             'filhos' => AssuntoResource::collection($this->filhos),
-            'quantidade_questoes' => $this->questoes(
+            'quantidade_questoes' => $this->quantidadeQuestoes(
                 $request->all()
-            )->count(),
+            ),
         ];
     }
 }

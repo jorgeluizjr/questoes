@@ -57,6 +57,18 @@ class Assunto extends AModel
         return $questoes;
     }
 
+    public function quantidadeQuestoes($arrParam = [])
+    {
+        $quantidadeQuestoes = $this->questoes($arrParam)->count();
+        $filhos = $this->filhos()->get();
+        if ($filhos->isNotEmpty()) {
+            foreach ($filhos as $filho) {
+                $quantidadeQuestoes += $filho->quantidadeQuestoes($arrParam);
+            }
+        }
+        return $quantidadeQuestoes;
+    }
+
     /**
      * @param \Illuminate\Database\Eloquent\Builder $query
      * @return \Illuminate\Database\Eloquent\Builder
