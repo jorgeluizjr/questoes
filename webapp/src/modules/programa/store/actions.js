@@ -15,9 +15,10 @@ export const buscarOrgaosAction = ({ commit }) => programaService
     return response;
   });
 
-export const cadastrarProgramaAction = ({ commit }, programa) => {
-  programaService.buscarAssuntos(programa.banca.id_banca, programa.orgao.id_orgao)
+export const cadastrarProgramaAction = ({ commit }, params) => {
+  programaService.buscarAssuntos(params.banca.id_banca, params.orgao.id_orgao)
     .then((response) => {
+      const programa = params;
       programa.assuntos = response.data.data;
       commit(types.SET_PROGRAMA, programa);
     });
