@@ -11,8 +11,10 @@
               v-for="(item,i) in programas"
               :key="i"
             >
-              <v-expansion-panel-header>
-                {{ item.banca.no_banca }} - {{ item.orgao.no_orgao }}
+              <v-expansion-panel-header
+                class="font-weight-bold"
+              >
+                {{ item.banca.no_banca }} - {{ item.orgao.no_orgao }} ({{item.orgao.sg_orgao}})
               </v-expansion-panel-header>
               <v-expansion-panel-content>
                 <template>
