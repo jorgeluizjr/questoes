@@ -6,7 +6,7 @@ echo "[ ****************** ] Starting Endpoint of Application [ ****************
 echo "Back - Starting Endpoint of Application"
 if ! [ -d "./vendor" ]; then
     echo " Install depedences whit composer..."
-    composer install --ignore-platform-reqs  --no-interaction --verbose --no-suggest
+    composer install --ignore-platform-reqs  --no-interaction --verbose --no-suggest --no-dev
     echo "DB Migration"
     php artisan module:migrate:refresh --seed
 fi

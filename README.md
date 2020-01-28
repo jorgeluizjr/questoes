@@ -18,25 +18,7 @@ Repositório com responsabilidade de disponibilizar uma stack com serviços que 
 - Javascript
   - Node
   - VueJS + VueX + Vuetify
-- MySQL
-
-## Estrutura de pastas
-
-O projeto foi divido em 3 estruturas de pastas principais:
-
-- [api back-end](./api)
-- [webapp front-end](./webapp)
-- [database](./database)
-
-## Serviços Disponíveis
-
-Para reunir todos os módulos acima, foi criada uma stack Docker da aplicação, contendo os serviços abaixo:
-
-- webapp-service - Porta 8080
-- api-service - Porta 9000
-- webserver-service - Porta 88
-- database-service - Porta 3306
-- webapp-webserver-service - Porta 80
+  - MySQL
 
 ## Como inicializar a Stack
 
@@ -50,15 +32,28 @@ cp exemplo-docker-compose.yml docker-compose.yml
 docker-compose up
 ```
 
+## Estrutura de pastas
+
+O projeto foi divido em 3 estruturas de pastas principais:
+
+- [api back-end](./api)
+- [webapp front-end](./webapp)
+- [database](./database) - Repositório criado dinamicamente 
+
+## Serviços Disponíveis
+
+Para reunir todos os módulos acima, foi criada uma stack Docker da aplicação, contendo os serviços abaixo:
+
+- webapp-service - Porta 8080
+- api-service - Porta 9000
+- webserver-service - Porta 88
+- database-service - Porta 3307
+
 #### Publicando Frontend
 
 Para disponibilizar o frontend da aplicação, execute o passos a seguir:
 - Dentro do diretório `webapp`  executar o comando `npm run build` 
 - O diretório `dist` será criado contendo o código-fonte da camada de apresentação de forma reduzida.
-- O serviço `webapp-webserver-service` compartilhará o diretório `webapp/dist` do host com o diretório 
-`/usr/share/nginx/html` do container.
-- A aplicação estará disponível por padrão na porta **80** através da publicação de portas compartilhadas(publish) 
-que foi definido através do comando **ports**.
 
 ## Funcionalidades 
   
