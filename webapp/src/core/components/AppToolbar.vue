@@ -111,7 +111,6 @@ export default {
       Util.toggleFullScreen();
     },
     abrirConfiguracoesDoTema() {
-      this.menuUsuario = false;
       this.toggleDrawerThemeAction(true);
     },
   },
