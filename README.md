@@ -52,7 +52,7 @@ Para reunir todos os módulos acima, foi criada uma stack Docker da aplicação,
 #### Publicando Frontend
 
 Para disponibilizar o frontend da aplicação, execute o passos a seguir:
-- Dentro do diretório `webapp`  executar o comando `npm run install` para instalar as dependências e o `npm run build` para preparar para produção. 
+- Dentro do diretório `webapp`  executar o comando `npm install` para instalar as dependências e o `npm run build` para preparar para produção. 
 - O diretório `dist` será criado contendo o código-fonte da camada de apresentação de forma reduzida.
 
 ## Funcionalidades 
